@@ -84,3 +84,52 @@ The payload accepted by this endpoint is the following:
 ```
 
 Note that the scale parameter is optional and can be removed. In this case, all the measurements will be consider as made on Celsius.
+
+## cURL Commands
+### Method POST
+cURL command to create 5 measurements. Two of them will be in the same day but different hours. Two of then will be in different months. The last one will be in another day.
+```bash
+curl -X POST \
+  http://localhost:8080/measurements \
+  -H 'Cache-Control: no-cache' \
+  -H 'Content-Type: application/json' \
+  -d '{
+	"measurements" : [
+		{
+			"timestamp": 1527811200000,
+			"idSensor": 1,
+			"value": 99.0
+		},
+		{
+			"timestamp": 1527814800000,
+			"idSensor": 1,
+			"value": 1.0
+		},
+		{
+			"timestamp": 1527901200000,
+			"idSensor": 1,
+			"value": 30.0
+		},
+		{
+			"timestamp": 1525222800000,
+			"idSensor": 1,
+			"value": 15.0
+		},
+		{
+			"timestamp": 1530493200000,
+			"idSensor": 1,
+			"value": 15.0
+		}
+	]
+}'
+```
+
+### Method GET
+cURL command to retrieve the data stored previously. This command will return the data aggregated daily, and will filter out two of the five measurements created with the previous cURL command.
+
+```bash
+curl -X GET \
+  'http://localhost:8080/measurements?idSensor=1&timestampFrom=1525222900000&timestampTo=1530493100000&aggregationType=D' \
+  -H 'Cache-Control: no-cache' \
+  -H 'Content-Type: application/json'
+```
