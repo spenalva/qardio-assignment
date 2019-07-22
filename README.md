@@ -133,3 +133,8 @@ curl -X GET \
   -H 'Cache-Control: no-cache' \
   -H 'Content-Type: application/json'
 ```
+## Assumptions
+To complete this project, I had to do some assumptions:
+- How to deal with possible duplicates? If, for some reason, the client send a measurement but the client does not receive the status OK/ACCEPTED, and the clients assumes that it needs to resend the same measurement, I decide that the system will override the measurement. To do so, the primary key of the measurement entity is a composite key: idSensor - timestamp.
+- Scales: I have decided to include several scales that the client could use. Because of that, I have also decided to set one of those scales as default, Celsius in this case.
+- Aggregation: I have decided to set the aggregation by hourly by default and to make this parameter as optional.
