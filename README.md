@@ -36,7 +36,7 @@ This method has only one parameter that is mandatory, and four optional paramete
 #### Optional parameters
 - timestampFrom: The date, in timestamp format, since the client wants to retrieve data.
 - timestampTo: The date, in timestamp format, until the client wants to retrieve data.
-- scale: The scale om which the client wants to retrieve the data. By default, C (Celsius). Available values are C, F (Fahrenheit) and K (Kelvin).
+- scale: The scale on which the client wants to retrieve the data. By default, C (Celsius). Available values are C, F (Fahrenheit) and K (Kelvin).
 - aggregationType: The aggregation type that will be used to aggregate the data. By default, H (hourly). Available values are H and D (daily).
 
 #### Response
