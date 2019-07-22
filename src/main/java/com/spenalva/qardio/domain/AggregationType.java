@@ -18,6 +18,6 @@ public enum AggregationType {
 	 * @throws NotFoundException In case no value exists in the enum for the <code>aggregationType</code> specified.
 	 */
 	public static AggregationType getAggregationType (String aggregationType) {
-		return Arrays.asList(AggregationType.values()).stream().filter(at -> at.name().equalsIgnoreCase(aggregationType)).findFirst().orElseThrow(NotFoundException::new);
+		return Arrays.stream(AggregationType.values()).filter(at -> at.name().equalsIgnoreCase(aggregationType)).findFirst().orElseThrow(NotFoundException::new);
 	}
 }
