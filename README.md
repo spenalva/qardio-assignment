@@ -5,7 +5,7 @@ Its purpose is to manage the temperature measurements made for one or more clien
 This section describes how the project can be run locally.
 
 ## Requirements
-To run the project locally the minium requirement is Java 8.
+To run the project locally the minimum requirement is Java 8.
 If the source code should be run an IDE is advisable, JDK and Maven are mandatory.
 In case the IDE chosen to run it is Eclipse, [Lombok](https://projectlombok.org/) must be installed first.
 This project uses the port 8080 to expose the endpoints, so make sure that this port is free before start it.
