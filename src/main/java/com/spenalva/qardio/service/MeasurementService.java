@@ -46,7 +46,7 @@ public interface MeasurementService {
 
 	/**
 	 * Creates a list of measurements asynchronously. 
-	 * Apart from that, the behavoir is the same that {@link MeasurementService#createMeasurement}.
+	 * Apart from that, the behaviour is the same that {@link MeasurementService#createMeasurement}.
 	 * @param request The data to be saved.
 	 */
 	void asyncCreateMeasurements(List<CreateMeasurementDTO> request);
